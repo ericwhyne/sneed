@@ -96,6 +96,7 @@ for location in locations.keys():
 
 for username in users.keys():
   csvout = 'datetime, date, time, country, region, city, lat, lon, ip\n'
+
   for connection in users[username]:
       csvout += connection['datetime'] + ',' + connection['date'] + ',' + connection['time'] + ',' + connection['country'] + ',' + connection['region'] \
       + ',' + connection['city'] + ',' + connection['lat'] + ',' + connection['lon'] + ',' + connection['ip'] + '\n'
