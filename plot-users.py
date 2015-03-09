@@ -8,7 +8,8 @@ datadir= "/home/eric/workspace/sneed-data/"
 
 gi = GeoIP.open(datadir + "GeoIPCity.dat", GeoIP.GEOIP_STANDARD)
 
-map_title = "VPN Connections"
+iname = "XData"
+map_title = iname + " VPN Connections"
 infilename = datadir + "xdata-vpn-logins.txt"
 outfilename = datadir + "sneed.html"
 
@@ -51,7 +52,9 @@ map_foot = """
 """
 markers = []
 paths = defaultdict(list)
-locations = defaultdict(list)
+locations = defaultdict(dict)
+locationmeta = defaultdict(dict)
+users = defaultdict(list)
 
 for line in infile.readlines():
 #  print line
@@ -67,6 +70,7 @@ for line in infile.readlines():
     city = str(geodata['city'])
   except:
     print "Unable to locate ip " + data[1]
+    lon = "NA"
   username = data[0]
   ip = data[1]
   date = data[2]
@@ -76,15 +80,28 @@ for line in infile.readlines():
   path_string = datetime + "," + lat + "," + lon
   paths[username].append(path_string)
   # collect data for each location
-  locations[lat+','+lon].append('<b>'+username+'</b><br>ip:'+ip+'<br>dtg:'+datetime+'<br><br>')
+
+  if lon != "NA":
+    locations[lat+','+lon][username] = "<a href='" + iname + "-" + username + ".html'>" + username + "</a><br>"
+    locationmeta[lat+','+lon] = "IP: " + ip + "<br>City: " + city + "<br>Region: " + region + "<br>Country: " + country + "<br>lat,lon: " + lat + "," + lon + "<br><br>"
+    users[username].append({'country':country, 'region':region, 'city':city, 'lat':lat, 'lon': lon, 'ip':ip, 'datetime':datetime, 'date':date, 'time':time})
 
 for location in locations.keys():
-  popup_string = ''
-  #print location
-  for popup in locations[location]:
-    popup_string += popup
+  popup_string = locationmeta[location]
+  for username in locations[location].keys():
+    popup_string += locations[location][username]
+  #print popup_string
   marker_string = 'L.marker(['+location+']).addTo(map).bindPopup("'+popup_string+'");'
   markers.append(marker_string)
+
+for username in users.keys():
+  csvout = 'datetime, date, time, country, region, city, lat, lon, ip\n'
+  for connection in users[username]:
+      csvout += connection['datetime'] + ',' + connection['date'] + ',' + connection['time'] + ',' + connection['country'] + ',' + connection['region'] \
+      + ',' + connection['city'] + ',' + connection['lat'] + ',' + connection['lon'] + ',' + connection['ip'] + '\n'
+      #print connection
+print "-----------"
+print csvout
 
 for marker in sorted(markers): #sorting makes debugging easier, can be removed for production
   map_body += marker + '\n'
