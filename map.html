@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sneed Map</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+</head>
+<body>
+	<div id="map" style="width: 1300px; height: 900px"></div>
+
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script>
+
+		var map = L.map('map').setView([38, -98], 4);
+
+		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'examples.map-i875mjb7'
+		}).addTo(map);
+
+L.marker([30.2966003418,-97.7662963867]).addTo(map).bindPopup("<b>sblazek</b><br>ip:216.82.221.46<br>dtg:2015/02/24T15:20:04<br><br><b>sblazek</b><br>ip:216.82.221.46<br>dtg:2015/02/24T15:20:22<br><br>");
+L.marker([32.8796005249,-96.7042999268]).addTo(map).bindPopup("<b>cdoig</b><br>ip:199.227.124.166<br>dtg:2015/02/23T13:40:08<br><br>");
+L.marker([33.7541999817,-118.201896667]).addTo(map).bindPopup("<b>jslepicka</b><br>ip:98.119.152.156<br>dtg:2015/02/23T19:39:43<br><br><b>jslepicka</b><br>ip:98.119.152.156<br>dtg:2015/02/23T19:58:01<br><br>");
+L.marker([33.7865982056,-118.298698425]).addTo(map).bindPopup("<b>cyin</b><br>ip:68.181.206.36<br>dtg:2015/02/23T11:29:27<br><br><b>cyin</b><br>ip:207.151.57.223<br>dtg:2015/02/23T11:30:01<br><br><b>cyin</b><br>ip:207.151.57.223<br>dtg:2015/02/23T16:57:27<br><br><b>cyin</b><br>ip:207.151.57.223<br>dtg:2015/02/23T16:58:43<br><br><b>cyin</b><br>ip:207.151.57.223<br>dtg:2015/02/23T16:58:43<br><br><b>cyin</b><br>ip:207.151.57.223<br>dtg:2015/02/23T19:13:27<br><br><b>cyin</b><br>ip:207.151.57.223<br>dtg:2015/02/23T19:13:27<br><br><b>cyin</b><br>ip:207.151.57.223<br>dtg:2015/02/23T19:14:22<br><br><b>cyin</b><br>ip:207.151.57.223<br>dtg:2015/02/23T19:14:22<br><br><b>cyin</b><br>ip:68.181.56.68<br>dtg:2015/02/23T21:00:07<br><br><b>cyin</b><br>ip:68.181.56.68<br>dtg:2015/02/23T22:15:21<br><br><b>cyin</b><br>ip:68.181.56.68<br>dtg:2015/02/23T22:15:21<br><br><b>cyin</b><br>ip:207.151.57.223<br>dtg:2015/02/23T22:55:41<br><br><b>cyin</b><br>ip:68.181.207.159<br>dtg:2015/02/23T23:29:28<br><br><b>cyin</b><br>ip:207.151.57.223<br>dtg:2015/02/23T23:29:49<br><br>");
+L.marker([33.9776992798,-118.435096741]).addTo(map).bindPopup("<b>asingh</b><br>ip:128.9.184.120<br>dtg:2015/02/23T13:27:30<br><br><b>asingh</b><br>ip:128.9.184.120<br>dtg:2015/02/23T13:29:12<br><br><b>aphilpot</b><br>ip:128.9.184.133<br>dtg:2015/02/23T14:24:16<br><br><b>asingh</b><br>ip:128.9.184.120<br>dtg:2015/02/23T16:36:28<br><br><b>asingh</b><br>ip:128.9.184.120<br>dtg:2015/02/23T16:44:10<br><br><b>asingh</b><br>ip:128.9.184.120<br>dtg:2015/02/23T17:03:17<br><br><b>asingh</b><br>ip:128.9.184.94<br>dtg:2015/02/24T13:27:19<br><br><b>asingh</b><br>ip:128.9.184.94<br>dtg:2015/02/24T14:27:43<br><br><b>cyin</b><br>ip:128.9.184.213<br>dtg:2015/02/24T15:02:55<br><br><b>asingh</b><br>ip:128.9.184.94<br>dtg:2015/02/24T15:08:56<br><br><b>asingh</b><br>ip:128.9.184.94<br>dtg:2015/02/24T15:09:34<br><br><b>asingh</b><br>ip:128.9.184.94<br>dtg:2015/02/24T15:14:52<br><br><b>asingh</b><br>ip:128.9.184.94<br>dtg:2015/02/24T15:33:51<br><br>");
+L.marker([34.026599884,-118.283096313]).addTo(map).bindPopup("<b>asingh</b><br>ip:104.32.164.254<br>dtg:2015/02/24T03:33:32<br><br>");
+L.marker([34.0522003174,-118.24369812]).addTo(map).bindPopup("<b>asingh</b><br>ip:206.117.31.153<br>dtg:2015/02/23T13:26:33<br><br><b>asingh</b><br>ip:206.117.31.153<br>dtg:2015/02/23T18:48:31<br><br>");
+L.marker([34.0526008606,-118.113296509]).addTo(map).bindPopup("<b>cyin</b><br>ip:96.41.29.87<br>dtg:2015/02/22T23:44:04<br><br><b>cyin</b><br>ip:96.41.29.87<br>dtg:2015/02/24T00:15:30<br><br><b>cyin</b><br>ip:96.41.29.87<br>dtg:2015/02/24T13:26:13<br><br>");
+L.marker([37.7862014771,-122.437103271]).addTo(map).bindPopup("<b>cgoodman</b><br>ip:199.116.73.50<br>dtg:2015/02/23T16:21:41<br><br><b>cgoodman</b><br>ip:199.116.73.50<br>dtg:2015/02/23T17:59:47<br><br><b>cgoodman</b><br>ip:199.116.73.50<br>dtg:2015/02/23T19:35:08<br><br><b>cgoodman</b><br>ip:199.116.73.50<br>dtg:2015/02/23T19:35:08<br><br><b>cgoodman</b><br>ip:199.116.73.50<br>dtg:2015/02/23T20:04:33<br><br><b>cgoodman</b><br>ip:199.116.73.50<br>dtg:2015/02/23T20:36:25<br><br><b>cgoodman</b><br>ip:199.116.73.50<br>dtg:2015/02/23T20:36:25<br><br><b>cgoodman</b><br>ip:199.116.73.50<br>dtg:2015/02/23T21:05:33<br><br><b>cgoodman</b><br>ip:199.116.73.50<br>dtg:2015/02/23T21:59:11<br><br>");
+L.marker([38.2723999023,-77.5932006836]).addTo(map).bindPopup("<b>kshaffer</b><br>ip:98.175.167.115<br>dtg:2015/02/24T15:19:00<br><br><b>kshaffer</b><br>ip:98.175.167.115<br>dtg:2015/02/24T15:19:04<br><br>");
+L.marker([38.9841003418,-77.3826980591]).addTo(map).bindPopup("<b>dgilliland</b><br>ip:204.148.24.98<br>dtg:2015/02/23T09:45:30<br><br><b>dgilliland</b><br>ip:204.148.24.98<br>dtg:2015/02/23T14:42:52<br><br><b>mgroh</b><br>ip:204.148.24.98<br>dtg:2015/02/24T09:42:47<br><br><b>dgilliland</b><br>ip:204.148.24.98<br>dtg:2015/02/24T13:53:03<br><br><b>ewhyne</b><br>ip:204.148.24.98<br>dtg:2015/02/24T14:08:34<br><br><b>dgilliland</b><br>ip:204.148.24.98<br>dtg:2015/02/24T14:59:59<br><br>");
+L.marker([40.443901062,-79.9561004639]).addTo(map).bindPopup("<b>rgirdhar</b><br>ip:128.2.194.23<br>dtg:2015/02/22T15:07:09<br><br><b>rgirdhar</b><br>ip:128.2.194.23<br>dtg:2015/02/22T23:08:56<br><br><b>rgirdhar</b><br>ip:128.2.194.23<br>dtg:2015/02/22T23:08:56<br><br><b>plandwehr</b><br>ip:128.237.247.227<br>dtg:2015/02/23T09:33:16<br><br><b>rgirdhar</b><br>ip:128.2.194.23<br>dtg:2015/02/23T14:33:24<br><br><b>rgirdhar</b><br>ip:128.237.220.45<br>dtg:2015/02/24T15:25:23<br><br>");
+L.marker([42.3625984192,-71.0842971802]).addTo(map).bindPopup("<b>agallant</b><br>ip:204.9.220.36<br>dtg:2015/02/23T07:07:16<br><br><b>jfrank</b><br>ip:204.9.220.42<br>dtg:2015/02/23T09:39:50<br><br><b>agallant</b><br>ip:204.9.220.36<br>dtg:2015/02/23T12:08:31<br><br><b>agallant</b><br>ip:204.9.220.36<br>dtg:2015/02/24T08:42:55<br><br><b>agallant</b><br>ip:204.9.220.36<br>dtg:2015/02/24T14:59:22<br><br>");
+L.marker([42.3800010681,-71.1328964233]).addTo(map).bindPopup("<b>jfrank</b><br>ip:76.24.17.157<br>dtg:2015/02/22T20:59:52<br><br>");
+L.marker([43.6525001526,-79.368598938]).addTo(map).bindPopup("<b>cmenezes</b><br>ip:184.94.17.26<br>dtg:2015/02/22T11:40:15<br><br><b>cmenezes</b><br>ip:184.94.17.26<br>dtg:2015/02/23T09:30:33<br><br><b>mwillekes</b><br>ip:184.94.17.26<br>dtg:2015/02/23T09:33:58<br><br><b>mwillekes</b><br>ip:184.94.17.26<br>dtg:2015/02/23T11:16:54<br><br><b>dgiesbrecht</b><br>ip:184.94.17.26<br>dtg:2015/02/24T09:28:49<br><br><b>mwillekes</b><br>ip:184.94.17.26<br>dtg:2015/02/24T09:37:07<br><br><b>dgiesbrecht</b><br>ip:184.94.17.26<br>dtg:2015/02/24T13:20:59<br><br><b>cmenezes</b><br>ip:184.94.17.26<br>dtg:2015/02/24T13:24:09<br><br><b>mwillekes</b><br>ip:184.94.17.26<br>dtg:2015/02/24T15:31:38<br><br>");
+L.marker([45.0101013184,-93.1519012451]).addTo(map).bindPopup("<b>cyin</b><br>ip:66.41.249.148<br>dtg:2015/02/22T12:31:31<br><br>");
+L.polyline([[45.0101013184,-93.1519012451],[34.0526008606,-118.113296509],[33.7865982056,-118.298698425],[34.0526008606,-118.113296509],[33.9776992798,-118.435096741]], {color: 'red'}).addTo(map);
+L.polyline([[42.3800010681,-71.1328964233],[42.3625984192,-71.0842971802]], {color: 'red'}).addTo(map);
+L.polyline([[34.0522003174,-118.24369812],[33.9776992798,-118.435096741],[34.0522003174,-118.24369812],[34.026599884,-118.283096313],[33.9776992798,-118.435096741]], {color: 'red'}).addTo(map);
+
+	</script>
+</body>
+</html>
